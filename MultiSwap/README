@@ -1,0 +1,22 @@
+SwitchMulti用于替换生成新译文（中英，英中）
+
+1.使用条件
+1)已知原文和原文译文，待译原文。待译原文与已知原文有一处或多处不同。
+
+2.功能
+<1>可替换五种格式（1,一，I，First,壹，第一）20以内中英文序号。待译序号格式与已知译文同。
+<2>替换生成三种格式（1000,1千，一千）中文数字为英文格式数字。支持千万亿以内小数整数替换。
+例如：
+1000	->	1,000
+<3>根据词典替换词汇
+词典支持带概率的词典和不带概率的词典，带概率词典格式如下，每串字符用tab分开
+中金鑫盛	Zhongjin-Xinsheng	1.0000000
+百盛	baisheng	1.0000000
+百盛	Zhongjin-Xinsheng	0.5000000
+	
+3.调用方式
+String transhyp = SwitchDiffer.run(reference,hypthesis,transref,"cn-en"/"en-cn")
+中文词典设置
+DifferIsWord.cnenDic = "./././";
+英文词典设置
+DifferIsWord.encnDic = "./././";
